@@ -4,20 +4,10 @@ from IPython.display import Image
 import numpy as np
 
 class Tones():
-    def Rtone(self):
-        red = np.zeros(self.rgb.shape, dtype='uint8')
-        red[:,:,0] = self.rgb[:,:,0]
-        return red
-    
-    def Gtone(self):
-        green = np.zeros(self.rgb.shape, dtype='uint8')
-        green[:,:,1] = self.rgb[:,:,1]
-        return green
-
-    def Btone(self):
-        blue = np.zeros(self.rgb.shape, dtype='uint8')
-        blue[:,:,2] = self.rgb[:,:,2]
-        return blue
+    def choiceTone(self,rgb):
+        val = np.zeros(self.rgb.shape, dtype='uint8')
+        val[:,:,rgb] = self.rgb[:,:,rgb]
+        return val
 
     def RGBtone(self):
         rgb_tone = np.zeros(self.rgb.shape, dtype='uint8')

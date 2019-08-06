@@ -6,17 +6,14 @@ import webbrowser
 from convert import Convert
 from tones import Tones
 from negative import Negative, NegativeUnchanged, NegativeYiq
+from bright import Bright
 import numpy as np
 
-class Image (Convert, Tones, Negative, NegativeUnchanged, NegativeYiq):
+class Image (Convert, Tones, Negative, NegativeUnchanged, NegativeYiq, Bright):
     def __init__(self,name):
         self.name = name
-        self.rgb = (image.imread(self.name))
-        self.yiq = np.zeros(self.rgb.shape)
-
-    # def readImg(self):
-    #     self.rgb = image.imread(self.name)
-    #     self.rgb.flags
+        self.rgb = (image.imread(self.name)) #Recive RGB values
+        self.yiq = np.zeros(self.rgb.shape) #Create with zeros
 
     def showImageRgb(self): 
         plt.imshow(self.rgb)
